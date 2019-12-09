@@ -123,6 +123,10 @@ public interface TestOneMapper {
             "<if test=\" skuSelectParam.categoryName != null and skuSelectParam.categoryName != '' \">",
             "AND c.categoryName LIKE CONCAT('%',#{skuSelectParam.categoryName},'%')",
             "</if>",
+            //根据商品品牌名称查询
+            "<if test=\" skuSelectParam.brandName != null and skuSelectParam.brandName != '' \">",
+            "AND b.brandName LIKE CONCAT('%',#{skuSelectParam.brandName},'%')",
+            "</if>",
             //根据最后修改商品时间段查询
             "<if test=\" skuSelectParam.startTime != null and  skuSelectParam.endTime != null \">",
             "AND s.updateTime &lt;= #{skuSelectParam.endTime}",
@@ -141,6 +145,8 @@ public interface TestOneMapper {
     })
     List<SkuSelectDTO> functionsSelect(@Param("skuSelectParam") SkuSelectParam skuSelectParam);
 
+
+    //读取数据库内容   创建类列表
     @Select({
         "<script>",
         "SELECT categoryName FROM Category GROUP BY categoryName",
