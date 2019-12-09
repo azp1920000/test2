@@ -1,0 +1,14 @@
+server:
+  port: 8001
+
+
+spring:
+  application:
+    name: test2-service
+
+  datasource:
+    name: dev
+    username: root
+    password: fengpt
+    url: jdbc:mysql://106.13.123.121:3306/test1
+    driver-class-name: com.mysql.cj.jdbc.Driver
