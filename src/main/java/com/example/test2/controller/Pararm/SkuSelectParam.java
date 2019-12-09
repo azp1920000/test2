@@ -16,6 +16,7 @@ public class SkuSelectParam implements Serializable {
     private String skuName;
     private String categoryName;
     private List<Long> categoryIds;
+    private String brandName;
     @JsonFormat( pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime startTime;
     @JsonFormat( pattern = "yyyy-MM-dd HH:mm:ss")
